@@ -16,6 +16,7 @@ function getProduct(pdId, price, isExtraAdd) {
     totalcost();
 
 }
+// price Calcutation funtion
 
 function priceCalcutation(costId) {
     const productCost = document.getElementById(costId).innerText;
@@ -23,7 +24,7 @@ function priceCalcutation(costId) {
     return calculatCost;
 }
 
-//    
+//    totalcost 
 
 function totalcost() {
 
@@ -36,7 +37,6 @@ function totalcost() {
     document.getElementById('total-price').innerText = totalPrice;
     document.getElementById('pomo-total-price').innerText = totalPrice;
     return totalPrice;
-
 
 }
 
@@ -57,13 +57,12 @@ document.getElementById('pomoCodeBtn').addEventListener('click', function () {
     const pomoCode = document.getElementById('pomo-code-filed').value;
 
     const updatePrice = totalcost()
-    if (pomoCode == 'stevekaku') {
-        newPrice = (updatePrice * 20) / 100;
 
+    if (pomoCode.toLowerCase() == 'stevekaku') {
+        newPrice = (updatePrice * 20) / 100;
     }
-    const pomo = updatePrice - newPrice;
-    //document.getElementById('total-price').innerText = updatePrice;
-    document.getElementById('pomo-total-price').innerText = pomo;
+    const pomoPrice = updatePrice - newPrice;
+    document.getElementById('pomo-total-price').innerText = pomoPrice;
 
 
 })
