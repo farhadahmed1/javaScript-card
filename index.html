@@ -32,26 +32,32 @@
                             <div class="mt-5">
                                 <h5>Memory</h5>
                                 <div class="d-flex">
-                                    <button class="btn btn-outline-success mx-1">8GB unified memory</button>
-                                    <button id="memory16" class="btn btn-outline-success mx-1">16GB unified
+                                    <button id="memory8Gb" class="btn btn-outline-success mx-1">8GB unified
+                                        memory</button>
+                                    <button id="memory16Gb" class="btn btn-outline-success mx-1">16GB unified
                                         memory</button>
                                 </div>
                             </div>
                             <div class="mt-5">
                                 <h5>Storage</h5>
                                 <div class="d-flex">
-                                    <button id="fixed-memory" class="btn btn-outline-success mx-2">256GB SSD storage
+                                    <button onclick="getProduct('storage-cost',0,false)"
+                                        class="btn btn-outline-success mx-2">256GB SSD storage
                                     </button>
-                                    <button class="btn btn-outline-success mx-2">512GB SSD storage</button>
-                                    <button class="btn btn-outline-success mx-1">1TB SSD storage</button>
+                                    <button onclick="getProduct('storage-cost',100,true)"
+                                        class="btn btn-outline-success mx-2">512GB SSD storage</button>
+                                    <button onclick="getProduct('storage-cost',180,true)"
+                                        class="btn btn-outline-success mx-1">1TB SSD storage</button>
                                 </div>
                             </div>
                             <div class="mt-5">
                                 <h5>Delivery</h5>
                                 <div class="d-flex">
-                                    <button class="btn btn-outline-success mx-1">Friday,Aug 25 FREE prime
+                                    <button onclick="getProduct('delivery-cost',20,false)"
+                                        class="btn btn-outline-success mx-1">Friday,Aug 25 FREE prime
                                         Delivery</button>
-                                    <button class="btn btn-outline-success mx-1"> Aug 21 Delivery charge $20</button>
+                                    <button onclick="getProduct('delivery-cost',20,true)"
+                                        class="btn btn-outline-success mx-1"> Aug 21 Delivery charge $20</button>
                                 </div>
                             </div>
 
@@ -68,16 +74,16 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">Extra Storage Cost</th>
-                                            <td id="">$<span>0</span></td>
+                                            <td>$<span id="storage-cost">0</span></td>
                                         </tr>
                                         <tr>
                                             <th scope="row"> Delivery Charge</th>
-                                            <td id="">$<span>0</span></td>
+                                            <td>$<span id="delivery-cost">0</span></td>
                                         </tr>
 
                                         <tr>
                                             <th scope="row">Total Price</th>
-                                            <td id="">$<span>0</span></td>
+                                            <td>$<span id="" total-cost>0</span></td>
                                         </tr>
 
                                     </tbody>
