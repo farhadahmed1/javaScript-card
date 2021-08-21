@@ -1,7 +1,5 @@
 
 
-
-
 function getProduct(pdId, price, isExtraAdd) {
     const prouctInput = document.getElementById(pdId);
     let extraPrice = '';
@@ -13,20 +11,37 @@ function getProduct(pdId, price, isExtraAdd) {
     }
     prouctInput.innerText = extraPrice * price;
 
+    // add calculation
+
+    totalcost();
+
+}
+
+function priceCalcutation(costId) {
+    const productCost = document.getElementById(costId).innerText;
+    const calculatCost = parseFloat(productCost);
+    return calculatCost;
+}
+
+function totalcost() {
+    const bestPrice = priceCalcutation('best-price');
+    const memoryCost = priceCalcutation('memory-cost');
+    const storageCost = priceCalcutation('storage-cost');
+    const deliveryCost = priceCalcutation('delivery-cost');
+
+    let totalPrice = bestPrice + memoryCost + storageCost + deliveryCost;
+
+    document.getElementById('total-price').innerText = totalPrice;
+
 }
 
 document.getElementById('memory16Gb').addEventListener('click', function () {
 
     getProduct('memory-cost', 180, true);
-    // let price = 180;
-    // price = 0;
-    // const memoeyCost = document.getElementById('memory-cost');
-    // const fixedMemory = document.getElementById('fixed-memory');
-    // memoeyCost.innerText = price;
-    // fixedMemory.innerText = 0;
-    //document.getElementById('fixed-memory') = memoeyCost.innerText
+
 })
 
 document.getElementById('memory8Gb').addEventListener('click', function () {
     getProduct('memory-cost', 180, false);
 })
+
