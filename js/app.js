@@ -58,7 +58,7 @@ document.getElementById('pomoCodeBtn').addEventListener('click', function () {
 
     const updatePrice = totalcost()
 
-    if (pomoCode.toLowerCase() == 'stevekaku') {
+    if (pomoCode.toLowerCase() == 'steve jobs') {
         newPrice = (updatePrice * 20) / 100;
     }
     const pomoPrice = updatePrice - newPrice;
